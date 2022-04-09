@@ -2,7 +2,6 @@ E=set()
 Q=set()
 F=set()
 indexS = 0
-indexF = 0
 validation = True
 l={'Sigma:','States:','#','Transitions:','End'}
 f=open('nfa_config_file')
@@ -21,10 +20,9 @@ for line in f:
                     S = x
                     indexS += 1
                 elif len(line)>1 and 'F' in line:
-                    indexF += 1
                     F.add(x)
 f.close()
-
+E = sorted(E)
 nr=len(Q) #nr de stari
 m=[[0 for i in range(nr)] for j in range(nr)]
 f=open('nfa_config_file')
@@ -35,7 +33,7 @@ for line in f:
     if set(line).intersection(l)==set():
         if len(line)==3:
             x=int(line[0])
-            y=int(int(line[2]))
+            y=int(line[2])
             if line[1] in E:
                 if(m[x][y]==0):
                     m[x][y]=line[1]
@@ -50,7 +48,7 @@ f.close()
 # print('starile finale = ', F)
 #print('tranzitiile = ', m)
 
-if indexS != 1 or indexF==0:
+if indexS != 1 or E == [] or Q == []:
     validation= False
 if validation == False:
     print('Invalid NFA')
