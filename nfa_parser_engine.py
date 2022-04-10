@@ -44,7 +44,7 @@ for line in f:
                 validation = False #verific daca literele din tranzitii fac parte din alfabet
                 break
 f.close()
-if indexS != 1 or E == [] or Q == []:
+if indexS != 1: #daca nu avem stare initiala, este invalid
     validation = False
 if validation == True:
     print('Valid NFA')
