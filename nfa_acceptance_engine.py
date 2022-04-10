@@ -42,7 +42,7 @@ for line in f:
             else:
                 validation = False
 f.close()
-if indexS != 1 or E == [] or Q == []:
+if indexS != 1:
     validation= False
 if validation == False:
     print('Invalid NFA')
