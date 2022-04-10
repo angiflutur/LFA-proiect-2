@@ -44,7 +44,7 @@ for line in f:
                 validation = False #verific daca literele din tranzitii fac parte din alfabet
                 break
 f.close()
-if indexS != 1 or E == [] or Q == []:
+if indexS != 1:
     validation = False
 
 if validation == False:
