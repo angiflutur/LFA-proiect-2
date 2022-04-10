@@ -42,12 +42,6 @@ for line in f:
             else:
                 validation = False
 f.close()
-# print('alfabetul = ', E)
-# print('starile = ', Q)
-# print('starea initiala = ', S)
-# print('starile finale = ', F)
-#print('tranzitiile = ', m)
-
 if indexS != 1 or E == [] or Q == []:
     validation= False
 if validation == False:
